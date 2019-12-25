@@ -1,0 +1,143 @@
+git remote -v  #Show all the branch from where we are pulling
+git remote add origin <link>  #used to add a connection to a new remote repository.
+
+To remove a URL from git pull go to 
+ .git/configure 
+ and comment the respective url
+
+To keep local changes
+git checkout --ours <path to file>
+
+
+To keep remote change 
+git checkout --theirs /path/to/file
+
+
+origin is the shorthand for  https://github.com/153079019shariq/Udacity-DeepLearning.git(remote repository)
+
+git pull origin master  means origin(remote repository) and master(branch name in local repository)
+
+
+To see the files committed in git :
+git show --pretty="" --name-only <commit id>
+
+Difference between local and github before pull
+https://stackoverflow.com/questions/6000919/how-to-check-the-differences-between-local-and-github-before-the-pull
+
+----------------------------------------GIT_FETCH----------------------------------------------------
+git pull origin master=git fetch origin master + git merge origin/master
+
+
+When git fetch is run, the following things happen:
+1.the commit(s) on the remote branch are copied to the local repository
+2.the local tracking branch (e.g. origin/master) is moved to point to the most recent commit
+
+The important thing to note is that the local branch does not change at all.
+
+
+
+--------------------Git command from Udacity ------------------------------------------
+
+git log --oneline   #This will show one commit per line
+git log --stat      #This will show the log as well as the file which were changed in the log
+git log -p          #p stands for the patch . This command is git log + git diff of all the files changed 
+
+git log -p fdf5493  # To see for a particular commit
+
+git add .          #Add all the files in the working directory.If we want to add most of the files but some files then we could use .gitignore .
+
+
+----------------------------Adding tag in git-------------------------------------------------------------------------
+
+git tag -a v1.0    #This will open a VIM file where we can add the description to it.
+
+git tag            #This will list all the tags
+
+#A TAG IS A PERMENANT POINTER AND IT DOES NOT MOVE
+
+---------------------------GIT BRANCH -----------------------------------------------------------------------------
+git branch                 #List all the branch in git.The branch in which I am is listed with a * sign
+
+git branch <branch-name>   #Create a new branch with <branch-name>.
+
+git checkout <branch-name> #Go to a particular branch.
+
+
+git branch -d <branch-name> #Deletion of  branch 
+
+git branch -D <branch-name> #Force deletion of  branch
+
+---------------------------------GIT MERGE-----------------------------------------------------------------------------------
+GIT TRACKS LINES IN FILES. A MERGE CONFLICT WILL HAPPEN WHEN THE EXACT SAME LINE(S) ARE CHANGED IN SEPARATE BRANCHES.
+
+----------------------------------GIT RESET--------------------------------------------------------------------------------
+1.before doing a git reset we can create a backup branch
+     git branch backup
+2. Do the git reset
+
+3. To get back the same data as before reset we can do:
+     git merge backup
+
+git reset HEAD^   --(This is --mixed)Does reset and moves the file to the working directory
+git reset --soft HEAD^ --Does reset and moves the file to the stagging area 
+git reset --hard HEAD^ --Does reset and moves the file to the TRASH(CANNOT BE RECOVERED).
+
+
+git reflog  can be used for git reset for 30 days recovery 
+
+
+the parent commit – the following indicate the parent commit of the current commit
+HEAD^
+HEAD~
+HEAD~1
+the grandparent commit – the following indicate the grandparent commit of the current commit
+HEAD^^
+HEAD~2
+the great-grandparent commit – the following indicate the great-grandparent commit of the current commit
+HEAD^^^
+HEAD~3
+
+----------------------------------GIT_REBASE-----------------------------------------------------------------------
+git rebase #Can be used to combineseveral commit into a singe commit
+#Refer udacity git lecture for details
+
+------------------------------------Globbing works like regular expression of VIM ------------------------------------
+Globbing Crash Course
+Let's say that you add 50 images to your project, but want Git to ignore all of them. Does this mean you have to list each and every filename in the .gitignore file? Oh gosh no, that would be crazy! Instead, you can use a concept called globbing.
+
+Globbing lets you use special characters to match patterns/characters. In the .gitignore file, you can use the following:
+
+blank lines can be used for spacing
+# - marks line as a comment
+* - matches 0 or more characters
+? - matches 1 character
+[abc] - matches a, b, or c
+** - matches nested directories - a/**/z matches
+a/z
+a/b/z
+a/b/c/z
+
+
+samples/*.jpg will ignore 
+
+trees.png 
+bg-pattern.png
+LOUDFILE.PNG
+
+If you ask Git to ignore "be?rs", which of the following filenames will be ignored?
+1.bears
+2.beers
+
+
+-------------------------------------AMAZON EC2 UBUNTU-------------------------------------------------------------------------
+
+lsof | grep gpu
+Ctrl+Shift+v to copy from intrnet to AMAZON workspace vim
+
+source activate tf-gpu   ---Pytorch Keras installed here
+
+
+If ssh is hanging follow the steps in the link:
+https://unix.stackexchange.com/questions/200239/how-can-i-keep-my-ssh-sessions-from-freezing
+
+---------------------------------------------------------------------------------------------------------------------------

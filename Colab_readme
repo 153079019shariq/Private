@@ -1,0 +1,32 @@
+
+
+#Mount all the data in google drive into colab
+#For loading large dataset into colab
+1. Load the data into google drive
+
+2. Mount the drive into colab
+from google.colab import drive
+drive.mount('/content/gdrive')
+
+
+
+
+#Upload all files into colab
+from google.colab import files
+src = list(files.upload().values())[0]
+
+
+#To access the file in colab
+open('kitti_train.py','wb').write(src)
+import kitti_train
+
+
+
+
+https://towardsdatascience.com/downloading-datasets-into-google-drive-via-google-colab-bcb1b30b0166
+
+
+Transfer largefiles into colab
+https://towardsdatascience.com/3-ways-to-load-csv-files-into-colab-7c14fcbdcb92
+
+https://medium.freecodecamp.org/how-to-transfer-large-files-to-google-colab-and-remote-jupyter-notebooks-26ca252892fa
