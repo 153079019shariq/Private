@@ -5,12 +5,6 @@ To remove a URL from git pull go to
  .git/configure 
  and comment the respective url
 
-To keep local changes
-git checkout --ours <path to file>
-
-
-To keep remote change 
-git checkout --theirs /path/to/file
 
 
 origin is the shorthand for  https://github.com/153079019shariq/Udacity-DeepLearning.git(remote repository)
@@ -23,6 +17,15 @@ git show --pretty="" --name-only <commit id>
 
 Difference between local and github before pull
 https://stackoverflow.com/questions/6000919/how-to-check-the-differences-between-local-and-github-before-the-pull
+
+
+--------------------------------------------GIT CHECKOUT----------------------------------------------------------------
+To keep local changes
+git checkout --ours <path to file>
+
+
+To keep remote change 
+git checkout --theirs /path/to/file
 
 ----------------------------------------GIT_FETCH----------------------------------------------------
 git pull origin master=git fetch origin master + git merge origin/master
@@ -127,6 +130,15 @@ LOUDFILE.PNG
 If you ask Git to ignore "be?rs", which of the following filenames will be ignored?
 1.bears
 2.beers
+--------------------------------------------------------
+--------To keep the change of the remote repository---------------------
+git checkout --theirs path/to/file
+
+
+git checkout --ours /path/to/file
+
+
+
 
 
 -------------------------------------AMAZON EC2 UBUNTU-------------------------------------------------------------------------
