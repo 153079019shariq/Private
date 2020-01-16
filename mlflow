@@ -97,8 +97,9 @@ Saving the large models could consume lot of memory like VGG19, Resnet50.So inst
   if(accuracy>80):
       mlflow.pytorch.log_model(model,"models") 
 -------------------------------------------------------------------------------------------------------------
-
-
+ ps -ef |grep "unicorn"
+ kill -9 <PID_of_all_process_with_unicorn>
+-------------------------------------------------------------------------------------------------------------
 
 
 
