@@ -1,0 +1,12 @@
+conda env list
+conda create --name myenv
+source activate <env_name>
+conda deactivate
+
+conda install pytorch==1.2.0 torchvision==0.4.0 cpuonly -c pytorch
+conda install -c conda-forge matplotlib
+conda install -c anaconda pandas
+conda install -c anaconda jupyter
+conda install -c anaconda pillow
+conda install pillow=6.1
+conda install -c conda-forge opencv
