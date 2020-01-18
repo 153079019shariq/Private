@@ -10,3 +10,6 @@ conda install -c anaconda jupyter
 conda install -c anaconda pillow
 conda install pillow=6.1
 conda install -c conda-forge opencv
+conda install -c conda-forge tqdm
+conda install -c anaconda scipy
+conda install -c conda-forge shapely
