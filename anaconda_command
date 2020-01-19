@@ -26,3 +26,9 @@ nvidia-smi
 sudo fuser -v /dev/nvidia*
 kill -9 <PID>
 -------------------------------------------------------------------
+
+------------Inconsistent use of tab and space----------------------
+:retab in vim
+
+
+
