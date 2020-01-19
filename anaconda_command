@@ -13,3 +13,16 @@ conda install -c conda-forge opencv
 conda install -c conda-forge tqdm
 conda install -c anaconda scipy
 conda install -c conda-forge shapely
+
+
+
+
+
+----------------NVIDIA command-------------------------------------
+nvidia-smi
+
+-------Free the cuda memory---------------------------------------
+
+sudo fuser -v /dev/nvidia*
+kill -9 <PID>
+-------------------------------------------------------------------
