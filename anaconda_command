@@ -3,12 +3,23 @@ https://www.digitalocean.com/community/tutorials/how-to-install-the-anaconda-pyt
 ____________________________________________________________________________________________
 
 
+
+
 conda env list
 conda create --name myenv
 source activate <env_name>
 conda deactivate
+_________________Pytorch link____________________________________________________
+https://pytorch.org/get-started/previous-versions/
+_________________________________________________________________________________
 
+#With GPU
+conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=9.2 -c pytorch
+
+#CPU only
 conda install pytorch==1.2.0 torchvision==0.4.0 cpuonly -c pytorch
+
+
 conda install -c conda-forge matplotlib
 conda install -c anaconda pandas
 conda install -c anaconda jupyter
