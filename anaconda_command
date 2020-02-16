@@ -1,4 +1,4 @@
-_____________________Installing Anaconda______________________________
+----------------------Installing Anaconda----------------------------------
 https://www.digitalocean.com/community/tutorials/how-to-install-the-anaconda-python-distribution-on-ubuntu-16-04
 ____________________________________________________________________________________________
 
@@ -9,7 +9,7 @@ conda env list
 conda create --name myenv
 source activate <env_name>
 conda deactivate
-_________________Pytorch link____________________________________________________
+-----------------Pytorch link---------------------------------------------------
 https://pytorch.org/get-started/previous-versions/
 _________________________________________________________________________________
 
@@ -48,5 +48,7 @@ kill -9 <PID>
 ------------Inconsistent use of tab and space----------------------
 :retab in vim
 
-
+-----------------------Check the GPU device in pytorch------------
+torch.cuda.get_device_name(0)
+--------------------------------------------------------------------
 
