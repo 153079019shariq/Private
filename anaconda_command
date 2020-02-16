@@ -1,3 +1,8 @@
+_____________________Installing Anaconda______________________________
+https://www.digitalocean.com/community/tutorials/how-to-install-the-anaconda-python-distribution-on-ubuntu-16-04
+____________________________________________________________________________________________
+
+
 conda env list
 conda create --name myenv
 source activate <env_name>
@@ -19,6 +24,8 @@ conda install -c conda-forge shapely
 
 
 ----------------NVIDIA command-------------------------------------
+https://www.youtube.com/watch?v=PeWTSprpq1M
+
 nvidia-smi
 
 -------Free the cuda memory---------------------------------------
