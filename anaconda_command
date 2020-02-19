@@ -30,6 +30,9 @@ conda install -c conda-forge tqdm
 conda install -c anaconda scipy
 conda install -c conda-forge shapely
 
+-------------------Adding anaconda env to the jupyter notebook----------------------------------------
+conda install ipykernel
+python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
 
 
 
