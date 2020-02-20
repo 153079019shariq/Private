@@ -2,7 +2,8 @@
 https://www.digitalocean.com/community/tutorials/how-to-install-the-anaconda-python-distribution-on-ubuntu-16-04
 ____________________________________________________________________________________________
 
-
+#Changing Python version for example from 3.8 to 3.5
+http://chris35wills.github.io/conda_python_version/
 
 
 conda env list
