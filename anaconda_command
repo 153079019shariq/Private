@@ -41,6 +41,9 @@ python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
 
 
 
+-------------------------------CUDA_INSTALLATION------------------------------------------------------
+https://www.pugetsystems.com/labs/hpc/How-to-install-CUDA-9-2-on-Ubuntu-18-04-1184/
+-----------------------------------------------------------------------------------------------------
 
 ----------------NVIDIA command-------------------------------------
 https://www.youtube.com/watch?v=PeWTSprpq1M
