@@ -10,4 +10,8 @@ for i,j in model_scat2.net._modules.items():
     x = j(x)
     print(i,x.shape)
     
-#----------------------------------------------------------------------------------------------------------------
+#-----------------------------------Checking if backpropagawtion will take through that layer---------------------------------
+for name, param in model.named_parameters():
+    if(param.requires_grad):#if param.requires_grad:
+        print (name)#, param.data)
+
