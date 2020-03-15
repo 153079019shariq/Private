@@ -15,3 +15,12 @@ for name, param in model.named_parameters():
     if(param.requires_grad):#if param.requires_grad:
         print (name)#, param.data)
 
+-------------------------------------Train few layers of the neural network-------------------------------------------------
+for name, param in model.named_parameters():
+    if('classifier' in name or            #or "denselayer21" in name or "denselayer22" in name or "denselayer23" in name or
+      "denselayer24" in name or "norm5" in name ):#if param.requires_grad:
+        param.requires_grad = True
+        print(name)
+    else:
+        param.requires_grad = False
+        
