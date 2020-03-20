@@ -68,4 +68,13 @@ sudo apt install dmidecode
 sudo dmidecode --type 17
 ----------------Checking how long a process is running------------------------------------------------------
 ps -p <PID> -o etime
+-------------------------------------------------------------------------------------------------------------
+
+------------------Resolving the issue of Jupyter notebook ...not able to save ....Validation-----------------
+https://github.com/jupyter/nbformat/issues/161#issuecomment-574530127
+--------------------------------------------------------------------------------------------------------------
+
+
+
+
 
