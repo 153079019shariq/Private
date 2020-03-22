@@ -1,2 +1,46 @@
 
 import gym 
+
+env_name = "CartPole-v1"
+env  = gym.make(env_name)   --Env has the handle for the enviroment
+
+
+#Reset the env 
+env.reset()
+
+
+#
+
+ 
+The cart pole has 2 action and obeservation an be seen from the following website :
+   https://github.com/openai/gym/wiki/CartPole-v0
+   
+ We can print the the observation space and the action space of the CartPole by using the following:
+   env.observatiom_space
+   env.action_space
+   
+ #Creating an agent class:
+    class Agent():
+       def __init__(self,env):
+         self.action_size = env.action_space.n
+         print("Action_size:",self.action_size)
+       def get_action(self,state):
+         #action  = random.choice(range(self.action_size))
+         pole_angle = state[2]
+         action =  0 if pole_angle < 0 else 1
+         return action
+    
+    
+    
+   agent  = Agent(env)
+   state  = env.reset()                       --Get the initial state
+   for _ in range(20):
+     #action = env.action_space.sample()
+     action  = agent.get_action(state)
+     env.step(action)                         --Returns a tuple containing state, reward, done, info. 
+     env.rendor ()                            ---Displaythe graphics
+ 
+  
+
+
+
