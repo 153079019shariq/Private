@@ -55,7 +55,11 @@ nvidia-smi
 sudo fuser -v /dev/nvidia*
 kill -9 <PID>
 -------------------------------------------------------------------
-
+---------------Free the RAM memory----------------------------------
+#Get to know the PID of process occupying maximam RAM
+ps -o pid,user,%mem,command ax | sort -b -k3 -r
+#kill the process
+kill -9 <PID>
 ------------Inconsistent use of tab and space----------------------
 :retab in vim
 
