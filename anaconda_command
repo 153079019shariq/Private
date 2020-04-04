@@ -47,7 +47,10 @@ python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
 https://www.pugetsystems.com/labs/hpc/How-to-install-CUDA-9-2-on-Ubuntu-18-04-1184/
 -----------------------------------------------------------------------------------------------------
 -------------------------------cudnn installation--------------------------------------------------
+1st preference
 https://stackoverflow.com/questions/31326015/how-to-verify-cudnn-installation/36978616#36978616
+2nd preference
+https://ruthwik.github.io/machinelearning/2019-08-12-tensorflow_gpu/
 -----------------------------------------------------------------------------------------------
 ----------------NVIDIA command-------------------------------------
 https://www.youtube.com/watch?v=PeWTSprpq1M
