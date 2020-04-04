@@ -32,6 +32,8 @@ conda install -c anaconda scipy
 conda install -c conda-forge shapely
 
 conda install -c conda-forge tensorflow
+pip install tensorflow-gpu==1.15
+
 conda install -c conda-forge keras
 
 
@@ -44,7 +46,9 @@ python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
 -------------------------------CUDA_INSTALLATION------------------------------------------------------
 https://www.pugetsystems.com/labs/hpc/How-to-install-CUDA-9-2-on-Ubuntu-18-04-1184/
 -----------------------------------------------------------------------------------------------------
-
+-------------------------------cudnn installation--------------------------------------------------
+https://stackoverflow.com/questions/31326015/how-to-verify-cudnn-installation/36978616#36978616
+-----------------------------------------------------------------------------------------------
 ----------------NVIDIA command-------------------------------------
 https://www.youtube.com/watch?v=PeWTSprpq1M
 
