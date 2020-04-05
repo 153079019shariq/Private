@@ -57,6 +57,10 @@ import tensorflow as tf
 sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 ----------------------------------------------------------------------------------------------
 
+------------------For compabtibility with tensorflow numpy ---------------------------------
+pip uninstall numpy (till you uninstall all versions)
+pip install numpy==1.16.4
+
 
 ----------------NVIDIA command-------------------------------------
 https://www.youtube.com/watch?v=PeWTSprpq1M
