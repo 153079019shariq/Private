@@ -1,0 +1,17 @@
+
+
+--------------------------------To get the weight and bias of neural network values---------------------------------------- 
+
+def getVar(name):
+        var = [v for v in tf.trainable_variables() if v.name==name+":0"][0]
+        return var
+
+
+k = getVar("dense1/b").eval()  #After training call this function to know the weight and bias of NN.
+#More info on this link
+https://github.com/jmlipman/LAID/blob/master/Tensorflow/Tutorial/3_cnn_pretty.py
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+
