@@ -18,6 +18,10 @@ git show --pretty="" --name-only <commit id>
 Difference between local and github before pull
 https://stackoverflow.com/questions/6000919/how-to-check-the-differences-between-local-and-github-before-the-pull
 
+------------------------Remove a line containing word deeplearn from the entire git history---------------
+git filter-branch -f --tree-filter 'sed -i '/deeplearn/d' atari_wrappers.py'   -- --all
+
+
 
 --------------------------------------------GIT CHECKOUT----------------------------------------------------------------
 To keep local changes
