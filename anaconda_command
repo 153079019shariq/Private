@@ -100,6 +100,9 @@ my_dt_ob  = datetime.datetime.now()
 date_list = [my_dt_ob.year, my_dt_ob.month, my_dt_ob.day, my_dt_ob.hour, my_dt_ob.minute, my_dt_ob.second]
 date_list = [str(i) for i in date_list]
 start_time = "_".join(date_list)
+--------------------Set_title_Nvidia-SMI-------------------------------------------------------------------
+from setproctitle import setproctitle as ptitle
+ptitle('Test Agent')
 
 
 
