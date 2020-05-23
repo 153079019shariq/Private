@@ -26,10 +26,16 @@ git filter-branch -f --tree-filter 'sed -i '/deeplearn/d' atari_wrappers.py'   -
 --------------------------------------------GIT CHECKOUT----------------------------------------------------------------
 To keep local changes
 git checkout --ours <path to file>
-
-
 To keep remote change 
 git checkout --theirs /path/to/file
+
+------------------------------------------LIST ALL FILES IN GIT-------------------------------------------------------
+git ls-tree -r master --name-only
+
+To check the time of modification of all files in git
+git ls-tree -r --name-only HEAD | while read filename; do
+  echo "$(git log -1 --format="%ad" -- $filename) $filename"
+done
 
 ----------------------------------------GIT_FETCH----------------------------------------------------
 git pull origin master=git fetch origin master + git merge origin/master
@@ -135,15 +141,6 @@ If you ask Git to ignore "be?rs", which of the following filenames will be ignor
 1.bears
 2.beers
 --------------------------------------------------------
---------To keep the change of the remote repository---------------------
-git checkout --theirs path/to/file
-
-
-git checkout --ours /path/to/file
-
-
-
-
 
 -------------------------------------AMAZON EC2 UBUNTU-------------------------------------------------------------------------
 
