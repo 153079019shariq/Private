@@ -35,6 +35,8 @@ def test:
     mlflow.log_metric("test_accuracy",test_accuracy)
 
 
+# With Mlflow start run we can give the name of the run
+mlflow.start_run(run_id=None, experiment_id=None, run_name=None, nested=False)
 
 Hyperparameter tuning with MLFlow:
    for lr in [0.01,0.05,0.1]:
