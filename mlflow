@@ -1,0 +1,121 @@
+To install mlflow 
+ pip3 install mlflow
+
+To fire mlfow gui  type :
+    mlflow ui 
+        from the same folder but another terminal from which Jupyter notebook is open
+    An interface will open
+
+-----------------------------------------------------------------------------------------------
+To import mlflow :
+  import mlflow
+  import mlflow.pytorch
+
+
+According to the practice of hyper-parameter tuning use :
+
+class Param(object):
+  def __init__(self, batch_size, epochs, seed, log_interval):
+    self.batch_size = batch_size
+    self.seed       = seed
+    self.log_interval = log_interval
+
+
+args = Param(256,4,0,20)
+
+
+In train loop add the following :
+ def train:
+   mlflow.log_metric("train_loss",loss.data.item()/len(inputs))
+
+Inside test loop:
+def test:
+  Add the following:
+    mlflow.log_metric("test_loss",test_loss)
+    mlflow.log_metric("test_accuracy",test_accuracy)
+
+
+# With Mlflow start run we can give the name of the run
+mlflow.start_run(run_id=None, experiment_id=None, run_name=None, nested=False)
+
+Hyperparameter tuning with MLFlow:
+   for lr in [0.01,0.05,0.1]:
+     for momentum in [0.9,0.92,0.95]:
+       for hidden_nodes in [16,32,48]:
+         
+         model   = Modl(hidden_nodes)
+         loss_fn = nn.CrossEntropyLoss()
+         opt     = optim.SGD(model.parameters(),lr =lr,mommentum=momentum)
+
+         with mlflow.start_run() as run:
+           for key,value in var(args).items():
+             mlflow.log_param(key,value)
+           mlflow.log_param("lr",lr)
+           mlflow.log_param("momentum",momentum)
+           mlflow.log_param("hidden_nodes",hidden_nodes)
+           
+           for epoch in range(1,args.epochs+1):
+             train(epoch)
+             test(epoch)
+             mlflow.pytorch.log_model(model,"models")
+
+In mlflow ui after running the code we can open mlflow ui and refresh it.
+ 
+In the gui we can filter like : metrics.test_accuracy>95 
+We can also compare.
+
+
+If we want an name for each experiment we can use :
+    mlflow.set_experiment("Fixed nH")
+
+-------------------------------------------Saving the image in mlflow-----------------------------------
+Logging Image with every run: 
+  In the function 
+      def test:
+        add the 
+            image_path  ="Path to image"
+            mlflow.log_artifact(image_path)
+
+
+An image folder will be created in mlflow/image directory. 
+
+
+------------------------------Saving the model and then loading it after sometime -------------------
+To log the model(save the model) in mlflow  we use the following commands:
+    mlflow.pytorch.log_model(model,"models") 
+
+    In mlflow ui we can see in the directory :
+        mlruns --> 0 -->"hash" -->artifacts-->models-->model.pth
+ 
+ To load the model we can use:
+      model_load  =mlflow.pytorch.load_model("models",run_id="run_id_no")
+
+  Now we can re-run with the loaded model.
+
+  print(model_load.parameters())
+
+
+Saving the large models could consume lot of memory like VGG19, Resnet50.So instead we can put condition on saving he model that if:
+  if(accuracy>80):
+      mlflow.pytorch.log_model(model,"models") 
+-------------------------------------------------------------------------------------------------------------
+ ps -ef |grep "unicorn"
+ kill -9 <PID_of_all_process_with_unicorn>
+-------------------------------------------------------------------------------------------------------------
+
+
+
+   
+
+
+
+
+
+
+  
+
+
+
+
+
+
