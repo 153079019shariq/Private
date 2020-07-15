@@ -31,8 +31,14 @@ conda install -c conda-forge tqdm
 conda install -c anaconda scipy
 conda install -c conda-forge shapely
 
+-------------------Install tensorflow 1.15----------------------------
 conda install -c conda-forge tensorflow
 pip install tensorflow-gpu==1.15
+-------------------------------------------------------------------------
+
+------------------------Install tensorlflow 2.0.0---------------------------------
+pip install tensorflow-gpu==2.0.0
+----------------------------------------------------------------------------------
 
 conda install -c conda-forge keras
 
@@ -52,9 +58,15 @@ https://stackoverflow.com/questions/31326015/how-to-verify-cudnn-installation/36
 2nd preference
 https://ruthwik.github.io/machinelearning/2019-08-12-tensorflow_gpu/
 -----------------------------------------------------------------------------------------------
--------------------Check tenflow gpu----------------------------------------------------------
+-------------------Check tenflow gpu- for tensorflow 1.15---------------------------------------------------------
 import tensorflow as tf
 sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+
+
+--------------Check tensorflow gpu for tensorflow 2.0.0--------------------------------------
+import tensorflow as tf
+tf.test.is_gpu_available()
+
 ----------------------------------------------------------------------------------------------
 
 ------------------For compabtibility with tensorflow numpy ---------------------------------
