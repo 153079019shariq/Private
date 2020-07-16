@@ -93,6 +93,7 @@ kill -9 <PID>
 :retab in vim
 
 -----------------------Check the GPU device in pytorch------------
+torch.cuda.is_available()
 torch.cuda.get_device_name(0)
 --------------------------------------------------------------------
 
