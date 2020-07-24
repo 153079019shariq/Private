@@ -49,6 +49,16 @@ python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
 
 
 
+---------------------------------NVIDIA_Driver and cuda---------------------------------------
+
+#Link : https://askubuntu.com/questions/742483/can-not-login-after-nvidia-driver-installation#:~:text=Highlight%20the%20Ubuntu%20menu%20entry%20and%20press%20the%20E%20key.&text=Press%20F10%20to%20boot%20the,latest%20official%20stable%20NVIDIA%20drivers.
+
+# Nvidia driver : https://www.nvidia.in/Download/index.aspx?lang=en
+# Cuda 10.1   : https://developer.nvidia.com/cuda-10.1-download-archive-base?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1604&target_type=runfilelocal
+#While Installing cuda, the driver will again be marked for installation. PLEASE UNMARK IT.
+
+
+
 -------------------------------CUDA_INSTALLATION------------------------------------------------------
 https://www.pugetsystems.com/labs/hpc/How-to-install-CUDA-9-2-on-Ubuntu-18-04-1184/
 -----------------------------------------------------------------------------------------------------
