@@ -136,4 +136,10 @@ from setproctitle import setproctitle as ptitle
 ptitle('Test Agent')
 
 
+-----------Jupyter shortcut command-----------------------------------------------------------------------
+https://www.mit.edu/~amidi/teaching/data-science-tools/study-guide/engineering-productivity-tips/
+-----------------------------------------------------------------------------------------------------------
+
+
+
 
