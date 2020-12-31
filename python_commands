@@ -1,0 +1,13 @@
+
+
+Convert decimal to binary
+        
+        while(num>0):
+            rem = num%2
+            num = num//2
+            print(rem)
+   
+   Convert binary to decimal
+     int("1010",2)
+   Convert decimal to binary
+      "{0:#b}".format(my_int) 
