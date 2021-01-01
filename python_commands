@@ -11,3 +11,6 @@ Convert decimal to binary
      int("1010",2)
    Convert decimal to binary
       "{0:#b}".format(my_int) 
+      
+   print(sorted(key_value.items(), key =lambda kv:(kv[1], kv[0])))     
+      
