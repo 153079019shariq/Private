@@ -14,3 +14,7 @@ Convert decimal to binary
       
    print(sorted(key_value.items(), key =lambda kv:(kv[1], kv[0])))     
       
+def func(x):
+  return x[1]
+
+print(sorted(key_value.items(), key =func))
