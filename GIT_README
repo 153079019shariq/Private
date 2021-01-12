@@ -9,7 +9,7 @@ To remove a URL from git pull go to
 
 origin is the shorthand for  https://github.com/153079019shariq/Udacity-DeepLearning.git(remote repository)
 
-git pull origin master  means origin(remote repository) and master(branch name in local repository)
+git pull origin master  means origin(remote repository) and master(branch name in remote repository)
 
 
 To see the files committed in git :
