@@ -12,7 +12,10 @@ Convert decimal to binary
    Convert decimal to binary
       "{0:#b}".format(my_int) 
       
-   print(sorted(key_value.items(), key =lambda kv:(kv[1], kv[0])))     
+   print(sorted(key_value.items(), key =lambda kv:(kv[1], kv[0]))) 
+   
+   # Sort Array B w.r.t array A
+   has = [y for _,y in sorted(zip(A,B))]
       
 def func(x):
   return x[1]
