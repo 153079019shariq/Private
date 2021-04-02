@@ -26,3 +26,17 @@ print(sorted(key_value.items(), key =func))
 
 Sorts all the 3 array wrt endtime 
 jobs = sorted(zip(startTime, endTime, profit), key=lambda v: v[1])
+
+
+
+#Top k frequent element using heap
+class HeapElement:
+    def __init__(self, count, word):
+        self.count = count
+        self.word = word
+        
+    def __lt__(self, other):
+        if self.count == other.count:
+            return self.word > other.word
+        return self.count < other.count
+        
