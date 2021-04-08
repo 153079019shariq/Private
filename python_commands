@@ -40,3 +40,6 @@ class HeapElement:
             return self.word > other.word
         return self.count < other.count
         
+    #Convert a dictionory to tuple
+     has = list(has.items()) 
+    
