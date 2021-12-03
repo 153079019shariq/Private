@@ -24,3 +24,10 @@ for name, param in model.named_parameters():
     else:
         param.requires_grad = False
         
+ -----------------------------------Saving tthe model ----------------------------------------------------------------------
+   torch.save({ "epoch" : epoch +1 ,
+                "optimizer" : optimizer.state_dict(),
+                "state_dict" : model.state_dict(),
+                 },filename)
+ 
+   model.load_state_dict(torch.load(weight_file,location=device)["state_dict"])     
