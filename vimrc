@@ -35,4 +35,5 @@ set nobackup
 set nowritebackup
 set noswapfile
 set clipboard=unnamed
+set belloff=all
 noremap % v%
