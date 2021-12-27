@@ -1,0 +1,427 @@
+\documentclass{article}
+
+\usepackage{xcolor}
+
+%-------------------------------------------------------------------------
+%margins 0.75 inch all
+%\usepackage{fullpage}
+\usepackage{hyperref}
+\usepackage{soul}
+\usepackage{multicol}
+\usepackage[a4paper]{geometry}
+\usepackage{color}
+\usepackage{transparent}
+\usepackage{tabulary}
+\newcolumntype{K}[1]{>{\arraybackslash}p{#1}}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{fontawesome}
+\usepackage{setspace}
+
+\usepackage{mdframed}
+\definecolor{lightgray}{gray}{0.85}
+	\definecolor{lavendergray}{rgb}{0.9, 0.9, 0.98}
+\definecolor{bl}{RGB}{173,216,230}
+\definecolor{mintcream}{rgb}{0.96, 1.0, 0.98}
+\definecolor{palesilver}{rgb}{0.79, 0.75, 0.73}
+\definecolor{silver}{rgb}{0.39, 0.35, 0.33}
+\definecolor{pearl}{rgb}{0.94, 0.92, 0.84}
+\definecolor{pigment}{rgb}{0.33, 0.33, 0.33}
+\definecolor{palepigment}{rgb}{0.68, 0.82, 0.72}
+\newcommand{\hilight}[1]{\colorbox{light-gray}{#1}}
+\geometry{top=.75in, bottom=.75in, left=.75in, right=.75in}
+
+
+%-------------------------------------------------------------------------
+%font san serif family
+\sffamily
+\upshape
+\mdseries
+%-------------------------------------------------------------------------
+%paragraph spacings
+\def\vsp{4pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+%-------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------
+%for horizontal lines
+\usepackage[pdftex]{graphicx}
+%\newcommand{\HRule}{\rule{\linewidth}{0.2mm}}
+%-------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------
+%spaces in itemize
+%\usepackage{enumitem}
+%-------------------------------------------------------------------------
+\newmdenv[
+  backgroundcolor=white,
+  linecolor=black,
+  linewidth=1pt,
+  rightline=false,
+  leftline=false]{theorem}
+
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,      
+    urlcolor=blue,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%for iitb
+\vspace*{-48pt}
+
+%\iffalse
+%\vspace{-5cm}
+\begin{frame}
+
+  \centering \LARGE
+  \emph{\textbf{Shariq Ahmad}}\\
+\end{frame}
+\vspace*{2pt}
+%\iffalse
+\begin{frame}
+   \centering
+   \hspace{0.5mm}\raisebox{-0.35ex}{\includegraphics[width=3.5ex]{phono_logo.png}}: +91 9831619350
+  \hspace{10.05cm}\raisebox{-0.35ex}{\includegraphics[width=2.5ex]{GitHub-Mark-32px.png}}: \href{https://github.com/153079019shariq}{github.com/shariq}\\
+  \textbf{\raisebox{-0.35ex}{\includegraphics[width=3.5ex]{gmail_logo.png}}}: ahmadshariq12@gmail.com
+  \hfill{\raisebox{-0.35ex}{\includegraphics[width=2.5ex]{LI-In-Bug.png}}: \href{https://www.linkedin.com/in/shariq-ahmad-77957991/}{linkedin.com/shariq}}\\
+  
+\end{frame}
+%\fi
+
+
+%--------------------------------------------------------------------------
+ \begin{theorem}
+%\begin{center}
+\textbf{Degree}  \hspace{1.2cm} \textbf{Year}  \hspace{1.1 cm} \textbf{Institute} \hspace{3.4 cm} \textbf{Department}   \hspace{1cm}  \textbf{CPI} 
+%\end{center} 
+ \end{theorem}
+ \vspace{-3mm}
+\renewcommand{\tabcolsep}{5mm}
+\begin{table}[htb]
+\begin{tabular}{lllll}
+M.Tech & \hspace{0.4cm} 2018 & \hspace{0.2cm} IIT Bombay \hspace{3.15cm} ECE    & \hspace{1.4cm} 9.7/10   \\
+B.Tech      & \hspace{0.4cm} 2014       & \hspace{0.2cm} MCKV Institute of Engineering \hspace{.15cm} ECE & \hspace{1.5cm}8.93/10  
+%https://drive.google.com/file/d/1ulFeUj8j5JJyOgffG_EE1W07EGUj74WR/view?usp=sharing
+\vspace{-3mm}
+\end{tabular}
+\end{table}
+%--------------------------------------------------------------------------
+
+%---------------------------------------------- ***********--------------
+\iffalse
+   \begin{theorem}
+   \vspace{-0.7mm}
+\begin{center}
+\textbf{ AREAS OF INTEREST
+}\end{center}  
+\vspace{-0.7mm}    
+   \end{theorem}
+\vspace{-3mm}
+\vspace{\vsp}
+\hspace{20 mm} Machine Learning, Deep Learning, Computer Vision, Natural Language Processing.
+\fi
+%----------------------------------------------------------------------------------------------------
+\iffalse
+\begin{theorem}
+   \vspace{-0.7mm}
+\begin{center}
+\textbf{ PROGRAMMING EXPERIENCE
+}\end{center}  
+\vspace{-0.7mm}    
+   \end{theorem}
+\vspace{-3mm}
+\begin{itemize}
+ 
+\setlength{\itemsep} {-0.2em}
+\item Solved more than 500 problems on Leetcode 
+\hfill{\href{https://leetcode.com/shariq12/}{[Link]}}
+\vspace{-2mm}
+\end{itemize}
+\fi
+%--------------------------------------------------------------------------------------------------
+\begin{theorem}
+   \vspace{-1.2mm}
+\begin{center}
+\textbf{ WORK EXPERIENCE
+}\end{center}  
+\vspace{-0.7mm}    
+   \end{theorem}
+\vspace{-1mm}
+\hspace{2.7mm} \textbf{Qualcomm Research, Deep Learning Engineer for Augmented/Virtual Reality} \hfill{[2018 - Present]}
+\begin{itemize}
+\setlength{\itemsep} {-0.2em}
+ \item\textit{Head Pose Prediction}
+ \item[--] Carried out EDA analysis of the time-series data captured from the AR device
+
+\item[--] Improved the performance  using \textbf{LSTM} from the existing Time Series model for higher prediction time
+\item[--] Outperformed the existing model rotation error by a factor 3 and translation error by a factor of 2 using \textbf{Wavenet} architecture
+resulting in a smooth AR experience
+\item[--] Reduced the computation time of  DL-based pose prediction algorithm  from 300us to 40us on AR device  
+\item[--] Worked closely with the software team to ensure accurate integration of the DL-based pose prediction algorithm into the AR device
+ \item\textit{Facial Avatar}
+   \item[--] Developing a state of the art architecture capturing  the expression, identity coefficient and pose of a person
+   \item[--] Generating full face image from the partial image captured by the HMD camera
+   \item[--] Creating a Super-Resolved mesh, capturing finer details on the face using the \textbf{U-Net} architecture
+  \item[--] Used \textbf{Annealing VAE}  to generate a full face image from partial images captured from XR device  
+   \item[--] Generated the mesh having a 3D-vertex error of 5mm
+   using \textbf{Wassertian-GAN} neural network
+   \item[--] Used \textbf{PCA} for visualizing latent space of different expression obtained from the encoder of Annealing VAE
+   
+   
+\end{itemize}
+%-----------------------------------------------------------------------------------------------------
+
+\begin{theorem}
+   \vspace{-0.7mm}
+\begin{center}
+\textbf{PUBLICATIONS
+}\end{center}  
+\vspace{-0.7mm}    
+   \end{theorem}
+ \vspace{-1.8mm}    
+\begin{itemize}
+   
+  
+\item \textbf{Shariq Ahmad}, Ajit Gupte, Chiranjib Choudhari ``WaveNet-based head pose prediction for reducing registration error in Augmented Reality"(Qbuz 2020), Qualcomm India \hfill{\href{https://drive.google.com/file/d/1SMd7aflcrMpDJxzN8-ZAy7w1xiP7tiTf/view?usp=sharing}{[Link]}} 
+
+\item Chiranjib Choudhari, \textbf{Shariq Ahmad}, Dunky Liu, Jessica Wu  ``Controller Pose Estimation using Deep Learning" (ML Summit, Qualcomm) 
+
+\end{itemize} 
+ \vspace{-1.8mm}  
+%---------------------------------------------------------------------------------------------------
+ \begin{theorem}
+   \vspace{-0.7mm}
+\begin{center}
+\textbf{ ML HACKATHONS
+}\end{center}  
+  
+   \end{theorem}
+\vspace{-3.5mm}
+
+\begin{itemize}
+\setlength{\itemsep}{-0.15em}
+
+\item \textbf{Name Entity Recognition}
+\item[--] Carried out exploratory data analysis(EDA) on the dataset having \textbf{POS} tag and IOB tag
+\item[--] Compared and evaluated different model performance(\textbf{BiLSTM} and \textbf{BERT}) using F1-score as the metric
+\item[--] Fine tuned the \textbf{GPT-2} model and carried out Natural language generation.
+
+\item \textbf{Prediction of {6$^{th}$} Video frame given 5 consecutive video frames}\hfill{\href{https://drive.google.com/file/d/1uwSr-1dlImn5JYRzPpn62ublzCWKSGr0/view?usp=sharing}{[Qualcomm Hackathon 1st prize]}}
+\textbf{Git:} \href{https://github.com/153079019shariq/catz_contest}{\textit{Video prediction}}
+\item[--] Analysed all the images, augmented it  and created a model consisting of Convolution layers and LSTM
+\item[--] Used Dropout, Gaussian noise in order to prevent overfitting on the training data
+\item[--]Created five model and then used \textbf{bagging} in order achieve the perceptual distance of 6 
+
+\iffalse
+\item \textbf{Space Invader: a Reinforcement Learning competition}
+\hfill{\href{https://drive.google.com/file/d/13voQkZ9kiybTD-pCkeTBRxmi9IeBtqnG/view?usp=sharing}{[Qualcomm Hackathon 1st prize]}}
+
+\textbf{Git:} \href{https://github.com/153079019shariq/Space_Invader_RL} {\textit{Space Invader}}
+\item[--] Objective was to maximize agent score of the first 100 episodes using OpenAI's gym enviroment
+\item[--] Used A2C algorithm also with LSTM and reduced the entropy coefficient later, to maximize the rewards
+\item[--] Got a average reward of 25K over 100 episodes, the max reward being 69K using A2C-LSTM
+\fi
+
+
+
+
+\item \textbf{Detection of fake news from fact using Twitter dataset}
+\hfill{\href{https://drive.google.com/file/d/1mOlilPLZSuHSyqRIVukRvXs_700Hmz5I/view?usp=sharing}{[Qualcomm Hackathon Ranked 8th]}}
+\item[--] Carried out EDA on the dataset like stemming, lemmatization, stopword removal, unigram, bigram analysis
+\item[--] Analyses the performance of LSTM model using the \textbf{GloVe}, \textbf{Fasttext} embedding and \textbf{BERT}  model
+\item[--] Carried out stacking of these models and achieved and accuracy of 79.56 \%
+\end{itemize}
+
+
+\vspace{-2.7mm}
+
+
+%---------------------------------------------------------------
+ \begin{theorem}
+   \vspace{-0.7mm}
+\begin{center}
+\textbf{ TECHNICAL SKILLS
+}\end{center}  
+\vspace{-0.9mm}    
+   \end{theorem}
+\vspace{-3 mm}
+\begin{itemize}
+
+ \item \textbf{Programming Languages/Tools:}
+ Python, C/C++, SQL, Shell,  Apache Spark, Hadoop, Spyder, Jupyter
+\vspace{-0.5cm}
+\item \textbf{Packages}: Keras, Pytorch, Tensorflow, Numpy, Pandas, Scikit-learn, Matplotlib, NTLK, spaCy
+
+\end{itemize}
+%\newpage
+\vspace{-3.5mm}
+%---------------------------------------------------------------------------
+
+ \begin{theorem}
+   \vspace{-0.7mm}
+\begin{center}
+\textbf{ RELEVANT COURSES
+}\end{center}  
+\vspace{-0.7mm}    
+   \end{theorem}
+\vspace{-4.5mm}
+
+\begin{table}[htbp]
+
+\centering
+\begin{tabular}{lllll}
+
+  o Data Structure & o Deep Learning &   o  Foundation of Data Science   &  o Computer Vision  &  \\
+o Linear Algebra & o Machine Learning &  o Natural Language Processing  & o Mathematics for ML
+\end{tabular}
+\end{table}
+\vspace{-2mm}
+
+
+
+%------------------------------------------------------------------------------------------------
+
+
+
+\vspace{\vsp}
+ \begin{theorem}
+   \vspace{-0.7mm}
+\begin{center}
+\textbf{DATA SCIENCE PROJECTS
+}\end{center}  
+  
+   \end{theorem}
+\vspace{-1mm}
+\begin{itemize}
+\setlength{\itemsep}{-0.15em}
+\item \textbf{Classify the Dog breed using Convolution Neural Network} %\hfill{\textcolor{pigment}{[Deep Learning]}} 
+
+%\href{https://github.com/153079019shariq/Udacity-DeepLearning/tree/master/project-dog-classification}{\textbf{Github link:} \textit{Dog breed classifier}}
+
+\item[--] Designed a CNN to classify the dog breed using \textbf{Pytorch}
+\item[--] Trained the model on architecture like \textbf{Resnet} and \textbf{VGG19} to increase the model accuracy
+\item[--] Predicted the dog breed on the model with an accuracy of 86\% using transfer learning 
+
+
+
+\item \textbf{Space Invader: a Reinforcement Learning competition}
+\hfill{\href{https://drive.google.com/file/d/13voQkZ9kiybTD-pCkeTBRxmi9IeBtqnG/view?usp=sharing}{[Qualcomm Hackathon 1st prize]}}
+
+\textbf{Git:} \href{https://github.com/153079019shariq/Space_Invader_RL} {\textit{Space Invader}}
+\item[--] Objective was to maximize agent score of the first 100 episodes using OpenAI's gym enviroment
+\item[--] Used A2C algorithm also with LSTM and reduced the entropy coefficient later, to maximize the rewards
+\item[--] Got a average reward of 25K over 100 episodes, the max reward being 69K using A2C-LSTM
+
+
+
+\item \textbf{Generation of Human Faces using Generative Adversarial Networks} %\hfill{\textcolor{pigment}{[Deep Learning]}}
+%\href{https://github.com/153079019shariq/Udacity-DeepLearning/tree/master/project-face-generation}{\textbf{Github link:} \textit{Generation of Human Faces}}
+
+\item[--] Created a  discriminator/generator with strided convolution/fraction strided convolution respectively.
+\item[--] Used \textbf{Leaky ReLU}, \textbf{ReLU} as the acitvation function and \textbf{batch normalization}
+\item[--] Generated the fake images that looked like real images
+
+
+
+\item \textbf{Finding a donor for charity using ML algorithm } %\hfill{\textcolor{pigment}{[Machine Learning]}}
+
+%\href{https://github.com/153079019shariq/Udacity_Machine_Learning/tree/master/projects/finding_donors}{\textbf{Github link:} \textit{Finding a donor for charity}}
+
+\item[--] Analysed the datasets and pre-processed(scaling, clipping, encoding) them using Pandas and Numpy
+\item[--] Trained the dataset on various algorithm like \textbf{Logistic Regression}, \textbf{SVM} and \textbf{Random Forest}
+\item[--]  Evaluated the performance using cross-validation set and predicted it using Random Forest which had maximum accuracy of 86\%
+
+
+\item \textbf{Generation of TV scripts using Recurrent Neural Network } %\hfill{\textcolor{pigment}{[Deep Learning]}}
+ \item[--] Created a lookup table and tokenized the punctuation from the Seinfeld TV scripts dataset
+ \item[--] Created a neural network consisting of LSTM, passed the word embedding to the LSTM and trained it
+ \item[--] Performed hyperparameter tuning on the number of layers in the LSTM, batch size, sequence length and embedding dimension 
+ 
+ 
+\item \textbf{Building a deep neural network for classifying the CIFAR-10 dataset}  %\hfill{\textcolor{pigment}{[Deep Learning]}}
+ \item[--] Implemented the forward propagation, back propagation of a neural network using Numpy
+ \item[--] Implemented the \textbf{softmax} layer at the output and dropout at the intermediate layers to prevent overfitting
+ \item[--] Implemented the \textbf{cross-entropy} loss, gradient decent algorithm from minimizing the loss between actual output and predicted output
+ 
+
+
+
+%\begingroup\raggedright
+\item \textbf{Design of 16-bit 6 Stage Pipelined Processor ISA} %\hfill{\textcolor{pigment}{[Computer Architecture]}}
+
+\item[--] Designed a RISC Processor using 8 general purpose register for 3 instruction format (R, I and J) and
+total of 15 instructions in VHDL
+\item[--] Implemented hazard mitigation technique, Data Forwarding to improve the CPI
+\item[--] Verification of the design in FPGA Cyclone IVE using Altera Quartus
+
+\end{itemize}
+\vspace{-3mm}
+%\vspace{\vsp}
+%\hilight{\textbf{TECHNICAL SKILLS}}
+
+
+
+
+
+
+%---------------------------------------------------------------------------
+
+  \begin{theorem}
+   \vspace{-0.7mm}
+\begin{center}
+\textbf{ACHIEVEMENTS \& AWARDS
+}\end{center}  
+\vspace{-0.7mm}    
+   \end{theorem}
+\vspace{-3mm}
+\begin{itemize}
+\setlength{\itemsep}{-0.10em}
+
+\item Ranked \textbf{5$^{th}$}  in Electrical Engineering with a CPI of 9.7 among 104 students, \textbf{IIT Bombay}   
+\hfill{\href{https://drive.google.com/file/d/1U6Im2h50TI0gOA6D1DFieJkynd2bFfO8/view?usp=sharing}{[Link]}}
+
+\item Ranked \textbf{1$^{st}$} in second and third semester of B.Tech amongst  \textbf{all department} of MCKVIE
+\hfill{\href{https://drive.google.com/file/d/10DtgyOHx6U-QuMhRV5mqdkzQtUtz9Cem/view}{[Link]}}
+ 
+
+\item Secured \textbf{99.6} percentile in GATE (Electronics and Communication) among 2,16,367 candidates
+
+
+\item Ranked \textbf{1$^{st}$} in the ML competition conducted  worldwide at Qualcomm to predict the {6$^{th}$} video frame from the given 5 video frames. \textit{Awarded \$1000 as the 1st prize} 
+\hfill{\href{https://drive.google.com/file/d/1uwSr-1dlImn5JYRzPpn62ublzCWKSGr0/view?usp=sharing}{[Link]}}
+
+
+
+\item Ranked \textbf{1$^{st}$} in the RL competition conducted worldwide at Qualcomm  and achieved a maximum reward of 25000 over 100 episodes in Space Invader.  \textit{Awarded \$1000 as the 1st prize} 
+\hfill{\href{https://drive.google.com/file/d/13voQkZ9kiybTD-pCkeTBRxmi9IeBtqnG/view?usp=sharing}{[Link]}}
+%\hfill{\href{https://drive.google.com/file/d/1qksFxfBCm_QDiLYxAmk8rgqbN2w9Hg3N/view?usp=sharing}{[Link]}}
+
+
+
+
+
+\item Ranked \textbf{8$^{th}$} in the NLP competition held at Qualcomm India to classify the fake news from the Twitter dataset.
+\hfill{\href{https://drive.google.com/file/d/1mOlilPLZSuHSyqRIVukRvXs_700Hmz5I/view?usp=sharing}{[Link]}}
+
+
+
+%\item Awarded  with \textbf{Qualstars} for making very accurate rotational and translational predictions on AR devices
+
+\end{itemize}
+\vspace{-2mm}
+
+
+
+
+%-----------------------------------------------------------------------------------------------------------------------------
+\end{document}
