@@ -148,5 +148,6 @@ pip install torch-scatter -f https://data.pyg.org/whl/torch-1.11.0+cu102.html
 pip install torch-sparse -f https://data.pyg.org/whl/torch-1.11.0+cu102.html
 pip install torch-geometric
 pip install torch-cluster -f https://data.pyg.org/whl/torch-1.11.0+cu102.html
-pip install torch-spline-conv -f https://data.pyg.org/whl/torch-1.11.0+cu102.html
+#DO NOT INSTALL torch-spline-conv as  it will result in GBL 2.27 ERROR
+#pip install torch-spline-conv -f https://data.pyg.org/whl/torch-1.11.0+cu102.html
 
