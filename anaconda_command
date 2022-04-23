@@ -142,6 +142,7 @@ https://www.mit.edu/~amidi/teaching/data-science-tools/study-guide/engineering-p
 
 
 -----------------------Install pytorch geometric-----------------------------------------------------------
+#Install cuda 10.2
 conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
 pip install torch-scatter -f https://data.pyg.org/whl/torch-1.11.0+cu102.html
 pip install torch-sparse -f https://data.pyg.org/whl/torch-1.11.0+cu102.html
