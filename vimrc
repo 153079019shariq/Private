@@ -37,3 +37,5 @@ set noswapfile
 set clipboard=unnamed
 noremap % v%
 set belloff=all
+
+set hlsearch
