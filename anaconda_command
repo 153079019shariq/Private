@@ -151,3 +151,7 @@ pip install torch-cluster -f https://data.pyg.org/whl/torch-1.11.0+cu102.html
 #DO NOT INSTALL torch-spline-conv as  it will result in GBL 2.27 ERROR
 #pip install torch-spline-conv -f https://data.pyg.org/whl/torch-1.11.0+cu102.html
 
+
+------------------------------------------------------Adding another git repo to a different git repo in a seperated branch-----------------------------------------------------
+https://stackoverflow.com/questions/17371150/moving-git-repository-content-to-another-repository-preserving-history
+
