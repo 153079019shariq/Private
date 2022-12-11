@@ -122,7 +122,7 @@ class HPOpt(object):
     def train_reg(self, reg, para):
         reg.set_params(**para['fit_params'])
         reg.fit(self.x_train, self.y_train,
-                eval_set= [(self.x_test, self.y_test)],)  
+                eval_set= [(self.x_test, self.y_test)],verbose=0)  
         y_pred_probab_train = reg.predict_proba(self.x_train)[:, 1]    
         y_pred_probab = reg.predict_proba(self.x_test)[:, 1]    
         
@@ -136,7 +136,7 @@ if __name__=="__main__":
 
   df = pd.read_csv("./data/train.csv")
   X = df.drop(["price_range"],axis=1).values
-  y = (df["price_range"] >1).astype(int) 
+  y = (df["price_range"] >2).astype(int) 
   print(np.unique(y))
 
 
