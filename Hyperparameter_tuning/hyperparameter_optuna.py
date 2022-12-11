@@ -15,7 +15,7 @@ def optimize(trial,X,y):
   criterion = trial.suggest_categorical("criterion",["gini","entropy"])
   n_estimators = trial.suggest_int("n_estimators",100,1500)
   max_depth =  trial.suggest_int("max_depth",3,15)
-  max_features = trial.suggest_float("max_features",0.01,1.0)
+  max_features = trial.suggest_float("max_features",0.01,1.0)  #suggest_uniform has warning that it be deprecated and to replace with suggest_float
 
   
   model = ensemble.RandomForestClassifier( n_estimators =n_estimators,
@@ -50,7 +50,13 @@ if __name__=="__main__":
   y = df["price_range"].values
   optimization_function = partial(optimize,X=X,y=y)
   study  = optuna.create_study(direction="minimize")
-  study.optimize(optimization_function,n_trials=15)
+  study.optimize(optimization_function,n_trials=2)
+
+
+  print(study.best_trial.values)
+  print(study.best_trial.params)
+
+
 
   
 
