@@ -1,5 +1,34 @@
 
 
+
+
+
+---------------------------Tensorflow installation--------------------------------------------------------------------------------
+
+Install the cuda . Please perform the following 
+1. Install the same version of cuda  11.4
+    https://developer.nvidia.com/cuda-11-4-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=20.04&target_type=deb_local
+	
+2. If you get the following error :
+     The following packages have unmet dependencies:
+     cuda : Depends: cuda-11-4 (>= 11.4.0) but it is not going to be installed
+     E: Unable to correct problems, you have held broken packages.
+
+   then do the following :
+    sudo apt-get install aptitude
+    sudo aptitude install cuda-11-4     
+    Do here N and then Y
+	
+	
+Create the conda env and perform the following:
+1. conda create --name tf python=3.8
+2 .conda activate tf
+3. conda install -c conda-forge cudatoolkit=11.4 cudnn=8.4.1
+4. mkdir -p $CONDA_PREFIX/etc/conda/activate.d
+5. echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/' > $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+6. pip install tensorflow==2.8.4
+	
+
 --------------------------------To get the weight and bias of neural network values---------------------------------------- 
 
 def getVar(name):
