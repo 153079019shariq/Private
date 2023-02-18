@@ -153,4 +153,5 @@ source activate tf-gpu   ---Pytorch Keras installed here
 If ssh is hanging follow the steps in the link:
 https://unix.stackexchange.com/questions/200239/how-can-i-keep-my-ssh-sessions-from-freezing
 
----------------------------------------------------------------------------------------------------------------------------
+-------------------------------Merge git repo into branch of another repo--------------------------
+https://stackoverflow.com/questions/21353656/merge-git-repo-into-branch-of-another-repo
