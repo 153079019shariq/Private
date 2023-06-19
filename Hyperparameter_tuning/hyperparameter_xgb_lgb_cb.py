@@ -191,4 +191,7 @@ Check the below items
 trials.results - a list of dictionaries returned by 'objective' during the search
 trials.losses() - a list of losses (float for each 'ok' trial)
 trials.statuses() - a list of status strings
+
+#Getting the best hyperparameter
+#https://stackoverflow.com/questions/45674652/best-parameters-solved-by-hyperopt-is-unsuitable
 """
