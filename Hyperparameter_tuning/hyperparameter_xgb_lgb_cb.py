@@ -100,13 +100,18 @@ class HPOpt(object):
       
     def process(self, fn_name, space, trials, algo, max_evals):
         fn = getattr(self, fn_name)
+        
         try:
             result = fmin(fn=fn, space=space, algo=algo, max_evals=max_evals, trials=trials)
             best_params = space_eval(space["reg_params"], result)
             print("Best_hyperparameter  ",best_params) 
+            best_auc = - min(lgb_opt[1].losses()) # because it returns -ve so we take min and negative
         except Exception as e:
             return {'status': STATUS_FAIL, 'exception': str(e)}
-        return result, trials
+        return {"best_params": best_params, 
+                "best_auc"   : best_auc,
+                "trial"      : trials
+                }
 
     def xgb_cls(self, para):
         reg = xgb.XGBClassifier(**para['reg_params'])
