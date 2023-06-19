@@ -102,7 +102,8 @@ class HPOpt(object):
         fn = getattr(self, fn_name)
         try:
             result = fmin(fn=fn, space=space, algo=algo, max_evals=max_evals, trials=trials)
-            print("Best_hyperparameter  ",result) 
+            best_params = space_eval(space["reg_params"], result)
+            print("Best_hyperparameter  ",best_params) 
         except Exception as e:
             return {'status': STATUS_FAIL, 'exception': str(e)}
         return result, trials
@@ -177,4 +178,12 @@ print(f"Training_AUC {train_auc}  Validation_AUC {val_auc} ")
 
 xgb_opt = obj.process(fn_name='xgb_cls', space=xgb_para, trials=Trials(), algo=tpe.suggest, max_evals=8)
 
+"""
+"""
+#http://hyperopt.github.io/hyperopt/getting-started/minimizing_functions/
+Check the below items
+ trials.trials - a list of dictionaries representing everything about the search
+trials.results - a list of dictionaries returned by 'objective' during the search
+trials.losses() - a list of losses (float for each 'ok' trial)
+trials.statuses() - a list of status strings
 """
