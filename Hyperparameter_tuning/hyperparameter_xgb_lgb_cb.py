@@ -6,7 +6,7 @@ from sklearn.metrics import mean_squared_error
 
 from sklearn.model_selection import train_test_split
 from hyperopt.pyll import scope
-
+from hyperopt import space_eval
 
 import lightgbm as lgb
 import xgboost as xgb
@@ -105,7 +105,7 @@ class HPOpt(object):
             result = fmin(fn=fn, space=space, algo=algo, max_evals=max_evals, trials=trials)
             best_params = space_eval(space["reg_params"], result)
             print("Best_hyperparameter  ",best_params) 
-            best_auc = - min(lgb_opt[1].losses()) # because it returns -ve so we take min and negative
+            best_auc = - min(trials.losses()) # because it returns -ve so we take min and negative
         except Exception as e:
             return {'status': STATUS_FAIL, 'exception': str(e)}
         return {"best_params": best_params, 
@@ -126,9 +126,8 @@ class HPOpt(object):
         return self.train_reg(reg, para)
   
     def train_reg(self, reg, para):
-        reg.set_params(**para['fit_params'])
         reg.fit(self.x_train, self.y_train,
-                eval_set= [(self.x_test, self.y_test)],verbose=0)  
+                eval_set= [(self.x_test, self.y_test)],**para['fit_params'])  
         y_pred_probab_train = reg.predict_proba(self.x_train)[:, 1]    
         y_pred_probab = reg.predict_proba(self.x_test)[:, 1]    
         
@@ -149,30 +148,35 @@ if __name__=="__main__":
   X_train, X_test, y_train, y_test =train_test_split(X,y,random_state=104,test_size=0.2, shuffle=True)
 
   obj = HPOpt(X_train, X_test, y_train, y_test)
-  xgb_opt = obj.process(fn_name='xgb_cls', space=xgb_para, trials=Trials(), algo=tpe.suggest, max_evals=8)
-  #lgb_opt = obj.process(fn_name='lgb_cls', space=lgb_para, trials=Trials(), algo=tpe.suggest, max_evals=150)
+  #xgb_opt = obj.process(fn_name='xgb_cls', space=xgb_para, trials=Trials(), algo=tpe.suggest, max_evals=8)
+  lgb_opt = obj.process(fn_name='lgb_cls', space=lgb_para, trials=Trials(), algo=tpe.suggest, max_evals=8)
   #ctb_opt = obj.process(fn_name='ctb_reg', space=ctb_para, trials=Trials(), algo=tpe.suggest, max_evals=100)
 
 
-# COMMAND ----------
-
-
+  
 
 """
-# COMMAND ----------
+fit_params =  xgb_para["fit_params"]
+reg_params =  xgb_opt["best_params"]
+print(reg_params)
+xgb_cls = xgb.XGBClassifier(**reg_params)
+xgb_cls.fit(X_train, y_train,
+                eval_set= [(X_test, y_test)], **fit_params)
 
-reg_params = {'colsample_bytree': 0.405430275199931, 'learning_rate': 0.1, 'min_child_weight': 53, 'n_estimators': 100, 'num_leaves': 106, 'reg_alpha': 2.2450413294821288, 'reg_lambda': 0.8194283820257628, 'subsample': 0.9346754845675219}
-fit_params = {
-    'eval_metric': 'auc',
-    'early_stopping_rounds': 10,
-    'verbose': False
-}
+y_pred_probab_train = xgb_cls.predict_proba(X_train)[:, 1]    
+y_pred_probab = xgb_cls.predict_proba(X_test)[:, 1] 
+"""
+
+fit_params =  lgb_para["fit_params"]
+reg_params =  lgb_opt["best_params"]
+print(reg_params)
 lgb_cls = lgb.LGBMClassifier(**reg_params)
 lgb_cls.fit(X_train, y_train,
                 eval_set= [(X_test, y_test)], **fit_params)
 
 y_pred_probab_train = lgb_cls.predict_proba(X_train)[:, 1]    
-y_pred_probab = lgb_cls.predict_proba(X_test)[:, 1]    
+y_pred_probab = lgb_cls.predict_proba(X_test)[:, 1] 
+
         
 train_auc = metrics.roc_auc_score(y_train, y_pred_probab_train)
 val_auc = metrics.roc_auc_score(y_test, y_pred_probab)
@@ -181,9 +185,7 @@ print(f"Training_AUC {train_auc}  Validation_AUC {val_auc} ")
 
 # COMMAND ----------
 
-xgb_opt = obj.process(fn_name='xgb_cls', space=xgb_para, trials=Trials(), algo=tpe.suggest, max_evals=8)
 
-"""
 """
 #http://hyperopt.github.io/hyperopt/getting-started/minimizing_functions/
 Check the below items
